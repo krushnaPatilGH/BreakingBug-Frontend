@@ -6,9 +6,8 @@ import emptyCart from "../../../assets/cartimg.png"
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { addToCart, removeAllFromCart, removeFromCart } from '../../../redux/userSlice';
+import { BasicButton, LightPurpleButton } from '../../../utils/buttonStyles';  //  CHANGED IMPORT TO BUTTONSTYLES
 
-//  CHANGED IMPORT TO BUTTONSTYLES
-import { BasicButton, LightPurpleButton } from '../../../utils/buttonStyles';
 import { useNavigate } from 'react-router-dom';
 
 // CHANGE IMPORT TO USERHANDLE

@@ -2,9 +2,7 @@ export const timeAgo = (date) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     
     const today = new Date();
-
-    const reviewDate = new Date(date)
-    // FIXED DEFINITION OF TIME DIFFERENCE
+    const reviewDate = new Date(date);
     const timeDifference = today - reviewDate;
 
     if (timeDifference < 60000) {
@@ -25,3 +23,4 @@ export const generateRandomColor = (id) => {
     const color = `hsl(${hash % 360}, 70%, 70%)`;
     return color;
 };
+

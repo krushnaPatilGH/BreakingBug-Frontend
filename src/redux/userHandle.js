@@ -199,6 +199,7 @@ export const getSearchedProducts = (address, key) => async (dispatch) => {
 
     try {
         const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/${address}/${key}`);
+        console.log(`Request URL: ${process.env.REACT_APP_BASE_URL}/${address}/${key}`);
         if (result.data.message) {
             dispatch(getSearchFailed(result.data.message));
         }

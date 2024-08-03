@@ -40,9 +40,7 @@ const SalesChart = ({  }) => {
                 <ResponsiveChart
                     options={ChartDatabyYear.options}
                     series={ChartDatabyYear.series}
-
-                    //  FIX VARIABLE USAGE
-                    type={ChartDatabyYear.type}
+                    type={ChartDatabyYear.type}                    //  FIX VARIABLE USAGE
                 />
             </CardContent>
 

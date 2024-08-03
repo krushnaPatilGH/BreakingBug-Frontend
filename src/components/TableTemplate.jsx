@@ -14,12 +14,12 @@ import { Button, ButtonGroup } from '@mui/material';
 // ButtonHaver Component
 const ButtonHaver = ({ row }) => {
   const handleEdit = () => {
-    // Handle edit action
+    
     console.log(`Edit row with ID: ${row.Id}`);
   };
 
   const handleDelete = () => {
-    // Handle delete action
+
     console.log(`Delete row with ID: ${row.Id}`);
   };
 
@@ -109,7 +109,6 @@ const StyledTableRow = styled(TableRow)(({theme}) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },

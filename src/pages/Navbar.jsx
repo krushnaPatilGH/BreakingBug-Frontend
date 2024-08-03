@@ -58,7 +58,7 @@ const Navbar = () => {
         setIsCartOpen(false);
     };
 
-    // Navigation Menu
+
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -67,7 +67,7 @@ const Navbar = () => {
         setAnchorElNav(null);
     };
 
-    // User Menu
+
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
@@ -76,7 +76,7 @@ const Navbar = () => {
         setAnchorElUser(null);
     };
 
-    // Signin Menu
+
     const handleOpenSigninMenu = (event) => {
         setAnchorElSign(event.currentTarget);
     };

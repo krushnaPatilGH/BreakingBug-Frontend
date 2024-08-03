@@ -56,7 +56,7 @@ const AuthenticationPage = ({ mode, role }) => {
                 const shopName = event.target.shopName.value;
 
                 if (!shopName) {
-                    if (!shopName) setShopNameError(true);
+                    setShopNameError(true);
                     return;
                 }
 

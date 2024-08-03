@@ -8,8 +8,8 @@ import Popup from './Popup';
 import { addStuff } from '../redux/userHandle';
 
 
-//   CORRECTED IMPORT
-import ProductsMenu from '../pages/customer/components/ProductsMenu'
+  //   CORRECTED IMPORT
+  import ProductsMenu from '../pages/customer/components/ProductsMenu'
 
 const Products = ({}) => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Products = ({}) => {
         {currentItems.map((data, index) => (
           <Grid item xs={12} sm={6} md={4}
             key={index}
-            onClick={() => ProductsMenu.navigate("/product/view/" + data._id)}
+            onClick={() => ProductsMenu.navigate("/product/view/" + data._id)}     // CHANGED
             sx={{ cursor: "pointer" }}
           >
             <ProductContainer>

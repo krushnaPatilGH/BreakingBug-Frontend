@@ -7,7 +7,7 @@ change 6 BreakingBug-Frontend-main/src/redux/userHandle.js: add try block in upd
 change 7 BreakingBug-Frontend-main/src/components/Popup.jsx: underControl is not part of userHandle it is part of userLice import from userSlice
 change 8 BreakingBug-Frontend-main/src/pages/customer/components/Cart.jsx: BasicButton,LightPurpleButton,updateCustomer are wrong imports chaned them
 change 9 BreakingBug-Frontend-main/src/pages/Slide.jsx: added get customers list in exports => setFilteredProducts, getCustomersListFailed
-// task handler
+
 change 10 BreakingBug-Frontend-main/src/components/Products.jsx: fixed the import errors
 change 11 BreakingBug-Frontend-main/src/components/SpeedDialTemplate.jsx: imported speedDialACtion
 change 12 BreakingBug-Frontend-main/src/pages/Navbar.jsx: REMOVED UNUSED VARIABLE anchorElNav
@@ -27,7 +27,7 @@ change 23 BreakingBug-Frontend-main/src/pages/seller/pages/ShowProducts.jsx: add
 change 24 BreakingBug-Frontend-main/src/pages/seller/pages/ViewProductSeller.jsx: added buttontext const
 change 25 BreakingBug-Frontend-main/src/components/AlertDialogSlide.jsx: added taskHandler parameter
 change 26 BreakingBug-Frontend-main/src/components/TableTemplate.jsx: fixed ids
-
+change 27 logout added
 
 table template . jsx = > // IMPORT REQUIRED MODULES
                             import {

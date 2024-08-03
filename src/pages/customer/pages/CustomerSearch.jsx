@@ -12,8 +12,6 @@ const CustomerSearch = ({ mode }) => {
     const [searchTerm, setSearchTerm] = useState("")
 
     const { filteredProducts } = useSelector(state => state.user);
-
-
     //  FIXED PARAMETERS AND PREVENT
     const handleSearch = (event) => {
         event.preventDefault()
@@ -49,7 +47,7 @@ const CustomerSearch = ({ mode }) => {
                     :
                     <>
                         {
-                             <Products productData={filteredProducts} />
+                            filteredProducts && <Products productData={filteredProducts} />
                         }
                     </>
             }

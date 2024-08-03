@@ -16,25 +16,25 @@ import { isTokenValid } from './redux/userSlice';
 import CheckoutAftermath from './pages/customer/pages/CheckoutAftermath';
 import ViewOrder from './pages/customer/pages/ViewOrder';
 
+
 const App = () => {
   const dispatch = useDispatch();
   const { isLoggedIn, currentRole, productData } = useSelector(state => state.user);
 
   const getTokenFromURL = () => {
     const params = new URLSearchParams(window.location.search);
-    return params.get('token'); // Assuming the token is passed as a query parameter
+    return params.get('token'); 
   };
 
   useEffect(() => {
     const token = getTokenFromURL();
     if (token) {
-      console.log('Token:', token); // Log the token to ensure it's correctly retrieved
+      console.log('Token:', token); 
       dispatch(isTokenValid(token));
     }
   }, [dispatch]);
 
   return (
-    
     <BrowserRouter>
       {(!isLoggedIn && currentRole === null) &&
         <>

@@ -152,14 +152,11 @@ const ViewOrder = () => {
                                         {productDetails.reviews.map((review, index) => (
                                             <ReviewCard key={index}>
                                                 <ReviewCardDivision>
-                                                        
                                                     <Avatar sx={{ width: "60px", height: "60px", marginRight: "1rem", backgroundColor: generateRandomColor(review._id) }}>
-                                                        {/* FIXED NAME HERE */}
-                                                        {String(review.reviewer.name).charAt(0)}
+                                                        {String(review.reviewer.name).charAt(0)} {/* FIXED NAME HERE */}
                                                     </Avatar>
                                                     <ReviewDetails>
-                                                        {/* FIXED NAME HERE */}
-                                                        <Typography variant="h6">{review.reviewer.name}</Typography>
+                                                        <Typography variant="h6">{review.reviewer.name}</Typography> {/* FIXED NAME HERE */}
                                                         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
 
                                                             <Typography variant="body2">
