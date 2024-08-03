@@ -8,7 +8,6 @@ import SellerDashboard from './pages/seller/SellerDashboard'
 import CustomerSearch from './pages/customer/pages/CustomerSearch'
 import Products from './components/Products';
 import { useEffect } from 'react';
-import { getProducts } from './redux/userHandle';
 import CustomerOrders from './pages/customer/pages/CustomerOrders';
 import CheckoutSteps from './pages/customer/pages/CheckoutSteps';
 import Profile from './pages/customer/pages/Profile';
@@ -18,19 +17,24 @@ import CheckoutAftermath from './pages/customer/pages/CheckoutAftermath';
 import ViewOrder from './pages/customer/pages/ViewOrder';
 
 const App = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn, currentRole, productData } = useSelector(state => state.user);
 
-  const dispatch = useDispatch()
+  const getTokenFromURL = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('token'); // Assuming the token is passed as a query parameter
+  };
 
-  const { isLoggedIn, currentToken, currentRole, productData } = useSelector(state => state.user);
-
-  useEffect(() =>
-     {
-
-
-    dispatch(isTokenValid());
-  }, [dispatch]); 
+  useEffect(() => {
+    const token = getTokenFromURL();
+    if (token) {
+      console.log('Token:', token); // Log the token to ensure it's correctly retrieved
+      dispatch(isTokenValid(token));
+    }
+  }, [dispatch]);
 
   return (
+    
     <BrowserRouter>
       {(!isLoggedIn && currentRole === null) &&
         <>

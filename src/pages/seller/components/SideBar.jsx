@@ -10,9 +10,12 @@ import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useSelector } from 'react-redux';
 
-const SideBar = () => {
 
-    
+
+const SideBar = () => {
+    //  DEFINED LOCATION CONST
+    const location = useLocation();
+
 
     const { currentRole } = useSelector(state => state.user);
 

@@ -1,6 +1,37 @@
 import React, {useState} from 'react'
 import {Table, TableBody, TableCell, TableContainer, TableRow, styled} from '@mui/material';
 
+
+
+// IMPORT REQUIRED MODULES
+import {
+  tableCellClasses,
+} from "@mui/material";
+import { Button, ButtonGroup } from '@mui/material';
+
+
+
+// ButtonHaver Component
+const ButtonHaver = ({ row }) => {
+  const handleEdit = () => {
+    // Handle edit action
+    console.log(`Edit row with ID: ${row.Id}`);
+  };
+
+  const handleDelete = () => {
+    // Handle delete action
+    console.log(`Delete row with ID: ${row.Id}`);
+  };
+
+  return (
+    <ButtonGroup variant="text" aria-label="actions">
+      <Button onClick={handleEdit}>Edit</Button>
+      <Button onClick={handleDelete}>Delete</Button>
+    </ButtonGroup>
+  );
+};
+
+
 const TableTemplate = ({columns, rows}) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
@@ -26,14 +57,14 @@ const TableTemplate = ({columns, rows}) => {
               .slice(page * rowsPerPage, page == rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <StyledTableRow hover role="checkbox" tabIndex={+1} key={row.Id}>
+                  <StyledTableRow hover role="checkbox" tabIndex={+1} key={row.id}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <StyledTableCell key={column.Id} align={column.align}>
+                        <StyledTableCell key={column.id} align={column.align}>
                           {
                             column.format && typeof value === 'number'
-                              ? column.format(id)
+                              ? column.format(column.id)
                               : value
                           }
                         </StyledTableCell>

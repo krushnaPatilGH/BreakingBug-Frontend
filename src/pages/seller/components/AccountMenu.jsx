@@ -4,6 +4,10 @@ import { Logout } from '@mui/icons-material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+
+//  FIXED DEFINITION OF USE EFFECT
+import { useEffect } from 'react';
+
 const AccountMenu = () => {
     const [anchorEl, setAnchorEl] = useEffect(null);
 

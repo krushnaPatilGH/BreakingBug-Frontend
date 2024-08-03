@@ -1,0 +1,46 @@
+change 1 BreakingBug-Frontend-main/src/pages/Navbar.jsx: Missing initializer in const declaration. (53:20): remove the space 
+change 2 BreakingBug-Frontend-main/src/pages/Navbar.jsx: change the const name to close
+change 3 BreakingBug-Frontend-main/src/redux/store.js: remove the = and add :
+change 4 BreakingBug-Frontend-main/src/pages/Slide.jsx: change the import link 
+change 5 BreakingBug-Frontend-main/src/redux/userHandle.js: remove ---
+change 6 BreakingBug-Frontend-main/src/redux/userHandle.js: add try block in updateCustomer function
+change 7 BreakingBug-Frontend-main/src/components/Popup.jsx: underControl is not part of userHandle it is part of userLice import from userSlice
+change 8 BreakingBug-Frontend-main/src/pages/customer/components/Cart.jsx: BasicButton,LightPurpleButton,updateCustomer are wrong imports chaned them
+change 9 BreakingBug-Frontend-main/src/pages/Slide.jsx: added get customers list in exports => setFilteredProducts, getCustomersListFailed
+// task handler
+change 10 BreakingBug-Frontend-main/src/components/Products.jsx: fixed the import errors
+change 11 BreakingBug-Frontend-main/src/components/SpeedDialTemplate.jsx: imported speedDialACtion
+change 12 BreakingBug-Frontend-main/src/pages/Navbar.jsx: REMOVED UNUSED VARIABLE anchorElNav
+change 13 BreakingBug-Frontend-main/src/pages/customer/components/OrderSummary.jsx: kinda fixed line 96 ...............
+change 14 BreakingBug-Frontend-main/src/pages/customer/components/Search.jsx:
+change 15 BreakingBug-Frontend-main/src/pages/customer/pages/customerOrders.jsx: imported specific products data
+change 16 BreakingBug-Frontend-main/src/pages/customer/pages/customerSearch.jsx: fixed handleSearch parameters and fixed function
+change 17 BreakingBug-Frontend-main/src/pages/seller/components/ACCountMEnu.jsx: fixed import of useEffect 
+change 18 BreakingBug-Frontend-main/src/pages/seller/components/SalesChart.jsx: fixed usage of type (ChartDatabyYear.type)
+change 18 BreakingBug-Frontend-main/src/pages/seller/components/SideBar.jsx: fixed definition of locatin const
+
+change 19 BreakingBug-Frontend-main/src/utils/helperFuntions.js: fixed reviewDate definition
+change 20 BreakingBug-Frontend-main/src/utils/userHandle.js: added address parameters
+change 21 BreakingBug-Frontend-main/src/pages/customer/pages/ViewOrder.jsx: convert reviewreviewername to review.reviewer.name in both locations
+change 22 BreakingBug-Frontend-main/src/pages/seller/pages/ViewProductSeller.jsx: convert reviewreviewername to review.reviewer.name in both locations
+change 23 BreakingBug-Frontend-main/src/pages/seller/pages/ShowProducts.jsx: add imports of  Box, Grid 
+change 24 BreakingBug-Frontend-main/src/pages/seller/pages/ViewProductSeller.jsx: added buttontext const
+change 25 BreakingBug-Frontend-main/src/components/AlertDialogSlide.jsx: added taskHandler parameter
+change 26 BreakingBug-Frontend-main/src/components/TableTemplate.jsx: fixed ids
+
+
+table template . jsx = > // IMPORT REQUIRED MODULES
+                            import {
+                            tableCellClasses,
+                            } from "@mui/material";
+
+fix button haver
+
+
+made changes in app token
+
+auth add email and pass values
+
+productmenu line 20
+
+cart.jsx line 40 reduce 

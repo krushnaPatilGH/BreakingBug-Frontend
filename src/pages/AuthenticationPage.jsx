@@ -27,16 +27,22 @@ const AuthenticationPage = ({ mode, role }) => {
     const [passwordError, setPasswordError] = useState(false);
     const [userNameError, setUserNameError] = useState(false);
     const [shopNameError, setShopNameError] = useState(false);
+    
+    
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setLoader(true);
 
-    const handleSubmit = (event) => {
+        const email = event.target.email.value; // Extract email from form fields
+        const password = event.target.password.value; // Extract password from form fields
 
-        let email, password;
-
-        if (!password) {
+        if (!email || !password) {
             if (!email) setEmailError(true);
             if (!password) setPasswordError(true);
+            setLoader(false);
             return;
         }
+        
 
          if (mode === "Register") {
             const name = event.target.userName.value;
@@ -77,22 +83,22 @@ const AuthenticationPage = ({ mode, role }) => {
         if (name === 'userName') setUserNameError(false);
         if (name === 'shopName') setShopNameError(false);
     };
+    
 
     useEffect(() => {
-        if (status === 'success' && currentRole !== null) {
+        if (status === 'success' && currentRole) {
             navigate('/');
+        } else if (status === 'failed') {
+            setMessage(response || 'An error occurred');
+            setShowPopup(true);
+            setLoader(false);
+        } else if (status === 'error') {
+            setLoader(false);
+            setMessage("Network Error");
+            setShowPopup(true);
         }
-        else if (status === 'failed') {
-            setMessage(response)
-            setShowPopup(true)
-            setLoader(false)
-        }
-        else if (status === 'error') {
-            setLoader(false)
-            setMessage("Network Error")
-            setShowPopup(true)
-        }
-    }, [status, currentUser, currentRole, navigate, error, response]);
+    }, [status, currentRole, navigate, response]);
+    
 
     return (
         <>

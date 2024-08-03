@@ -32,6 +32,11 @@ const Home = () => {
     }
   }, [error]);
 
+  useEffect(() => {
+    console.log('Product Data:', productData);
+    console.log('Response Products:', responseProducts);
+  }, [productData, responseProducts]);
+
   return (
     <div id="top">
       <Container

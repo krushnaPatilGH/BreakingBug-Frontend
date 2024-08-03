@@ -4,9 +4,12 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../redux/userSlice';
 import { BasicButton } from '../utils/buttonStyles';
-import { useNavigate } from 'react-router-dom';
 import Popup from './Popup';
 import { addStuff } from '../redux/userHandle';
+
+
+//   CORRECTED IMPORT
+import ProductsMenu from '../pages/customer/components/ProductsMenu'
 
 const Products = ({}) => {
   const dispatch = useDispatch();
@@ -49,7 +52,7 @@ const Products = ({}) => {
         {currentItems.map((data, index) => (
           <Grid item xs={12} sm={6} md={4}
             key={index}
-            onClick={() => navigate("/product/view/" + data._id)}
+            onClick={() => ProductsMenu.navigate("/product/view/" + data._id)}
             sx={{ cursor: "pointer" }}
           >
             <ProductContainer>
@@ -86,7 +89,7 @@ const Products = ({}) => {
 
       <Container sx={{ mt: 10, mb: 10, display: "flex", justifyContent: 'center', alignItems: "center" }}>
         <Pagination
-          count={Math.ceil(productData.length / itemsPerPage)}
+          count={Math.ceil( ProductsMenu.productData.length / itemsPerPage)}
           page={currentPage}
           color="secondary"
 

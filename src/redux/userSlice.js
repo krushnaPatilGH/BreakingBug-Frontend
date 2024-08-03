@@ -171,7 +171,8 @@ const userSlice = createSlice({
 
         isTokenValid: (state) => {
             const decodedToken = jwtDecode(state.currentToken);
-            if (state.currentToken) {              state.isLoggedIn = true;
+            if (state.currentToken) {              
+                state.isLoggedIn = true;
             } else {
                 localStorage.removeItem('user');
                 state.currentUser = null;
@@ -268,7 +269,7 @@ const userSlice = createSlice({
         setFilteredProducts: (state, action) => {
             state.filteredProducts = action.payload;
             state.responseSearch = null;
-            state.loading = false;
+            state.loading = true;
             state.error = null;
         },
         getSearchFailed: (state, action) => {
@@ -312,6 +313,12 @@ export const {
     fetchProductDetailsFromCart,
     updateCurrentUser,
     
+    // ADDED getcustomerslistfailed in exports
+    getCustomersListFailed,
+    setFilteredProducts,
+
+
+    specificProductData,
 } = userSlice.actions;
 
 export const userReducer = userSlice.reducer;

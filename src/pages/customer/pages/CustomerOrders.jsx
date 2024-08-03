@@ -9,6 +9,10 @@ import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 
+//   IMPORT SPECIFIC PRODUCT DATA
+import { specificProductData } from '../../../redux/userSlice'
+
+
 import ProductCard from '../components/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSpecificProducts } from '../../../redux/userHandle';

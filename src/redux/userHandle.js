@@ -49,7 +49,7 @@ export const addStuff = (address, fields) => async (dispatch) => {
 
     try {
         const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}`, fields, {
-            headers: { 'Content-Type': 'application/json' },---
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (result.data.message) {
@@ -95,11 +95,11 @@ export const deleteStuff = (id, address) => async (dispatch) => {
     }
 }
 
+//  ADD TRY
 export const updateCustomer = (fields, id) => async (dispatch) => {
     dispatch(updateCurrentUser(fields));
-    await axios.put(`${process.env.REACT_APP_BASE_URL}/CustomerUpdate/${id}`, fields);
-};
-
+    try{
+        await axios.put(`${process.env.REACT_APP_BASE_URL}/CustomerUpdate/${id}`, fields);
         dispatch(stuffUpdated());
 
       } catch (error) {
@@ -108,7 +108,7 @@ export const updateCustomer = (fields, id) => async (dispatch) => {
 
     }
 
-    }
+};
 
 export const getProductsbySeller = (id) => async (dispatch) => {
     dispatch(getRequest());
@@ -131,16 +131,17 @@ export const getProducts = () => async (dispatch) => {
 
     try {
         const result = await axios.get(`${process.env.REACT_APP_BASE_URL}/getProducts`);
-        if (result.data.message) {
-            dispatch(getProductsFailed(result.data.message));
-        }
-        else {
+        if (result.data.error) {
+            dispatch(getProductsFailed(result.data.error));
+        } else {
             dispatch(productSuccess(result.data));
         }
     } catch (error) {
-        dispatch(getError(error));
+        const errorMessage = error.response?.data?.message || error.message || 'An error occurred';
+        dispatch(getError(errorMessage));
     }
-}
+};
+
 
 export const getProductDetails = (id) => async (dispatch) => {
     dispatch(getRequest());
@@ -159,7 +160,8 @@ export const getProductDetails = (id) => async (dispatch) => {
     }
 }
 
-export const getCustomers = (id) => async (dispatch) => {
+//  ADDED ADDRESS PARAMETER
+export const getCustomers = (id, address) => async (dispatch) => {
     dispatch(getRequest());
 
     try {

@@ -2,6 +2,9 @@ export const timeAgo = (date) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     
     const today = new Date();
+
+    const reviewDate = new Date(date)
+    // FIXED DEFINITION OF TIME DIFFERENCE
     const timeDifference = today - reviewDate;
 
     if (timeDifference < 60000) {
